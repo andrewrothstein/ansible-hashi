@@ -1,0 +1,11 @@
+---
+# defaults file for hashi
+
+hashi_mirror: https://releases.hashicorp.com
+
+hashi_platform:
+  os: linux
+  arch: amd64
+
+hashi_app_root_install_dir: /usr/local
+hashi_elevate: True
