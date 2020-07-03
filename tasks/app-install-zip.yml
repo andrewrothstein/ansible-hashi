@@ -37,3 +37,11 @@
       file:
         path: '{{ hashi_app_install_fqzip }}'
         state: absent
+- name: linking executables for {{ hashi_app.name }}:{{ hashi_app_eff_ver }}
+  become: '{{ hashi_elevate }}'
+  become_user: root
+  with_items: '{{ hashi_app_install_links }}'
+  file:
+    state: link
+    src: '{{ hashi_app_install_exe }}'
+    dest: '{{ item }}'
