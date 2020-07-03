@@ -28,6 +28,9 @@ galaxy_info:
     - name: Gentoo
       versions:
         - all
+    - name: MacOSX
+      versions:
+        - all
     - name: Ubuntu
       versions:
         - bionic
