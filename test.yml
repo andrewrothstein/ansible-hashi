@@ -7,9 +7,5 @@
         ver: 1.8.0
       - name: consul-template
         ver: 0.25.0
-      - name: consul-k8s
-        ver: 0.16.0
       - name: vault
         ver: 1.4.2
-      - name: vault-k8s
-        ver: 0.4.0

@@ -1,0 +1,7 @@
+---
+- name: installing {{ hashi_app.name }} package
+  become: '{{ hashi_elevate }}'
+  become_user: root
+  package:
+    name: '{{ hashi_app.name }}'
+    state: present

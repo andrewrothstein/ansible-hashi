@@ -12,4 +12,4 @@
 - loop: '{{ hashi_apps }}'
   loop_control:
     loop_var: hashi_app
-  include_tasks: app-install.yml
+  include_tasks: 'app-install-{{ hashi_installer }}.yml'

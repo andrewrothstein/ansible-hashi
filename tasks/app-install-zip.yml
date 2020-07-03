@@ -1,7 +1,7 @@
 ---
 - name: resolving vars for {{ hashi_app.name }}:{{ hashi_app.ver }}
   include_vars:
-    file: app-install-vars.yml
+    file: app-install-zip-vars.yml
 - name: looking for install directory {{ hashi_app_install_dir }}
   stat:
     path: '{{ hashi_app_install_dir }}'
