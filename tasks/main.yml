@@ -9,7 +9,7 @@
       skip: true
       paths:
         - '{{ role_path }}/vars'
-- loop: '{{ hashi_apps }}'
+- loop: '{{ hashi_apps | default([]) }}'
   loop_control:
     loop_var: hashi_app
   include_tasks: 'app-install-{{ hashi_installer }}.yml'

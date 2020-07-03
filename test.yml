@@ -1,4 +1,8 @@
 ---
+# ensure the role can be included as a meta dependency without ill consequence
+- hosts: all
+  roles:
+  - role: '{{ playbook_dir }}'
 - hosts: all
   roles:
   - role: '{{ playbook_dir }}'
