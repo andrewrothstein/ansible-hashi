@@ -1,5 +1,5 @@
 ---
-- name: resolving vars for {{ hashi_app.name }}:{{ hashi_app.ver }}
+- name: resolving vars for {{ hashi_app.name }}:{{ hashi_app.ver }}{% if 'meta' in hashi_app %}+{{ hashi_app.meta }}{% endif %}
   include_vars:
     file: app-install-zip-vars.yml
 - name: looking for install directory {{ hashi_app_install_dir }}

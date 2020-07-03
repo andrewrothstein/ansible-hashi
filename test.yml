@@ -3,13 +3,25 @@
 - hosts: all
   roles:
   - role: '{{ playbook_dir }}'
+# simples example of usage
+- hosts: all
+  roles:
+  - role: '{{ playbook_dir }}'
+    hashi_apps:
+      - name: consul-template
+        ver: 0.25.0
+      - name: consul
+        ver: 1.8.0
+      - name: vault
+        ver: 1.4.2
+# examples with meta
 - hosts: all
   roles:
   - role: '{{ playbook_dir }}'
     hashi_apps:
       - name: consul
         ver: 1.8.0
-      - name: consul-template
-        ver: 0.25.0
+        meta: ent
       - name: vault
         ver: 1.4.2
+        meta: ent
