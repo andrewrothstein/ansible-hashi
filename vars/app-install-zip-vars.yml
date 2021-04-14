@@ -1,6 +1,6 @@
 ---
 hashi_app_install_platform: '{{ hashi_platform.os }}_{{ hashi_platform.arch }}'
-hashi_app_eff_ver: '{{ hashi_app.ver }}{% if "meta" in hashi_app %}+{{ hashi_app.meta }}{% endif %}'
+hashi_app_eff_ver: '{{ hashi_app.ver }}{% if hashi_app.meta is defined and hashi_app.meta != "" %}+{{ hashi_app.meta }}{% endif %}'
 hashi_app_install_zip: '{{ hashi_app.name }}_{{ hashi_app_eff_ver }}_{{ hashi_app_install_platform }}.zip'
 hashi_app_install_url: '{{ hashi_mirror }}/{{ hashi_app.name }}/{{ hashi_app_eff_ver }}/{{ hashi_app_install_zip }}'
 hashi_app_install_checksums_url: '{{ hashi_mirror }}/{{ hashi_app.name }}/{{ hashi_app_eff_ver }}/{{ hashi_app.name }}_{{ hashi_app_eff_ver }}_SHA256SUMS'
