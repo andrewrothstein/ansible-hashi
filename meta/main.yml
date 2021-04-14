@@ -15,6 +15,7 @@ galaxy_info:
         - all
     - name: Debian
       versions:
+        - bullseye
         - buster
         - stretch
     - name: EL
@@ -25,9 +26,6 @@ galaxy_info:
       versions:
         - 31
         - 32
-    - name: Gentoo
-      versions:
-        - all
     - name: MacOSX
       versions:
         - all
@@ -42,4 +40,4 @@ galaxy_info:
 
 dependencies:
   - role: andrewrothstein.unarchive-deps
-    version: v1.1.5
+    version: v1.2.0
