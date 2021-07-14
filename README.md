@@ -1,6 +1,7 @@
 andrewrothstein.hashi
 =========
-[![Build Status](https://travis-ci.org/andrewrothstein/ansible-hashi.svg?branch=master)](https://travis-ci.org/andrewrothstein/ansible-hashi)
+![Build Status](https://github.com/andrewrothstein/ansible-hashi/actions/workflows/build.yml/badge.svg)
+
 
 Installs HashiCorp software from [https://releases.hashicorp.com](https://releases.hashicorp.com).
 
