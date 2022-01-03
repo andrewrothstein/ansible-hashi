@@ -10,4 +10,4 @@ hashi_platform:
 hashi_installer: zip
 hashi_app_root_install_dir: /usr/local
 
-hashi_elevate: True
+hashi_elevate: true

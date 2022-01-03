@@ -26,7 +26,7 @@
       become: '{{ hashi_elevate }}'
       become_user: root
       unarchive:
-        remote_src: yes
+        remote_src: true
         src: '{{ hashi_app_install_fqzip }}'
         dest: '{{ hashi_app_install_dir }}'
         creates: '{{ hashi_app_install_exe }}'

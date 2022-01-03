@@ -14,15 +14,15 @@ hashi_app_install_links:
   - '{{ hashi_app_root_install_dir }}/bin/{{ hashi_app.name }}_{{ hashi_app_eff_ver }}_{{ hashi_app_install_platform }}'
 
 ## example output:
-#hashi_app_install_platform: linux_amd64
-#hashi_app_install_zip: vault_1.4.2_linux_amd64.zip
-#hashi_app_install_url: https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_linux_amd64.zip
-#hashi_app_install_checksums_url: https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_SHA256SUMS
+# hashi_app_install_platform: linux_amd64
+# hashi_app_install_zip: vault_1.4.2_linux_amd64.zip
+# hashi_app_install_url: https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_linux_amd64.zip
+# hashi_app_install_checksums_url: https://releases.hashicorp.com/vault/1.4.2/vault_1.4.2_SHA256SUMS
 
-#hashi_app_install_dir: /usr/local/vault_1.4.2
-#hashi_app_install_fqzip: /usr/local/vault_1.4.2/vault_1.4.2_linux_amd64.zip
-#hashi_app_install_exe: /usr/local/vault_1.4.2/vault
-#hashi_app_install_links:
-#  - /usr/local/bin/vault
-#  - /usr/local/bin/vault_1.4.2
-#  - /usr/local/bin/vault_1.4.2_linux_amd64
+# hashi_app_install_dir: /usr/local/vault_1.4.2
+# hashi_app_install_fqzip: /usr/local/vault_1.4.2/vault_1.4.2_linux_amd64.zip
+# hashi_app_install_exe: /usr/local/vault_1.4.2/vault
+# hashi_app_install_links:
+#   - /usr/local/bin/vault
+#   - /usr/local/bin/vault_1.4.2
+#   - /usr/local/bin/vault_1.4.2_linux_amd64
