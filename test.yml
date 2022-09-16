@@ -10,9 +10,9 @@
     - name: consul-template
       ver: 0.26.0
     - name: consul
-      ver: 1.10.0
+      ver: 1.13.1
     - name: vault
-      ver: 1.7.3
+      ver: 1.11.3
   roles:
   - role: '{{ playbook_dir }}'
 # examples with meta
@@ -20,10 +20,10 @@
   vars:
     hashi_apps:
     - name: consul
-      ver: 1.10.0
+      ver: 1.13.1
       meta: ent
     - name: vault
-      ver: 1.7.3
+      ver: 1.11.3
       meta: ent
   roles:
   - role: '{{ playbook_dir }}'
@@ -31,10 +31,10 @@
   vars:
     hashi_apps:
     - name: consul
-      ver: 1.10.0
+      ver: 1.13.1
       meta: ''
     - name: vault
-      ver: 1.7.3
+      ver: 1.11.3
       meta: ''
   roles:
   - role: '{{ playbook_dir }}'
