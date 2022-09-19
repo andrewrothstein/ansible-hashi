@@ -15,27 +15,27 @@
         name: '{{ hashi_app_install_dir }}'
         state: directory
         mode: 0755
-    - name: downloading {{ hashi_app_install_url }} to {{ hashi_app_install_fqzip }}
+    - name: downloading {{ hashi_app_install_url }} to {{ hashi_app_tmp_zip }}
       become: '{{ hashi_elevate }}'
       become_user: root
       get_url:
         url: '{{ hashi_app_install_url }}'
-        dest: '{{ hashi_app_install_fqzip }}'
+        dest: '{{ hashi_app_tmp_zip }}'
         checksum: 'sha256:{{ hashi_app_install_checksums_url }}'
     - name: unzipping
       become: '{{ hashi_elevate }}'
       become_user: root
       unarchive:
         remote_src: true
-        src: '{{ hashi_app_install_fqzip }}'
+        src: '{{ hashi_app_tmp_zip }}'
         dest: '{{ hashi_app_install_dir }}'
         creates: '{{ hashi_app_install_exe }}'
   always:
-    - name: cleaning up {{ hashi_app_install_fqzip }}
+    - name: cleaning up {{ hashi_app_tmp_zip }}
       become: '{{ hashi_elevate }}'
       become_user: root
       file:
-        path: '{{ hashi_app_install_fqzip }}'
+        path: '{{ hashi_app_tmp_zip }}'
         state: absent
 - name: linking executables for {{ hashi_app.name }}:{{ hashi_app_eff_ver }}
   become: '{{ hashi_elevate }}'

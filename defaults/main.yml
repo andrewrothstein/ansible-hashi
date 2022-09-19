@@ -3,11 +3,11 @@
 
 hashi_mirror: https://releases.hashicorp.com
 
-hashi_platform:
-  os: linux
-  arch: amd64
+hashi_arch_map:
+  aarch64: arm64
+  x86_64: amd64
 
 hashi_installer: zip
-hashi_app_root_install_dir: /usr/local
+hashi_app_parent_install_dir: /usr/local
 
 hashi_elevate: true

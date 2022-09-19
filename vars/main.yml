@@ -1,2 +1,4 @@
 ---
 # vars file for hashi
+hashi_os: '{{ ansible_system | lower }}'
+hashi_arch: '{{ hashi_arch_map[ansible_architecture] }}'
