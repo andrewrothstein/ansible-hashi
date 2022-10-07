@@ -22,7 +22,7 @@
         url: '{{ hashi_app_install_url }}'
         dest: '{{ hashi_app_tmp_zip }}'
         checksum: 'sha256:{{ hashi_app_install_checksums_url }}'
-    - name: unzipping
+    - name: unzipping {{ hashi_app_tmp_zip }} to {{ hashi_app_install_dir }}
       become: '{{ hashi_elevate }}'
       become_user: root
       unarchive:
