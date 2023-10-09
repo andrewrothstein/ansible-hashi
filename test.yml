@@ -2,39 +2,39 @@
 # ensure the role can be included as a meta dependency without ill consequence
 - hosts: all
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
 # simples example of usage
 - hosts: all
   vars:
     hashi_apps:
-    - name: consul-template
-      ver: 0.26.0
-    - name: consul
-      ver: 1.13.1
-    - name: vault
-      ver: 1.11.3
+      - name: consul-template
+        ver: 0.26.0
+      - name: consul
+        ver: 1.13.1
+      - name: vault
+        ver: 1.11.3
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
 # examples with meta
 - hosts: all
   vars:
     hashi_apps:
-    - name: consul
-      ver: 1.13.1
-      meta: ent
-    - name: vault
-      ver: 1.11.3
-      meta: ent
+      - name: consul
+        ver: 1.13.1
+        meta: ent
+      - name: vault
+        ver: 1.11.3
+        meta: ent
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
 - hosts: all
   vars:
     hashi_apps:
-    - name: consul
-      ver: 1.13.1
-      meta: ''
-    - name: vault
-      ver: 1.11.3
-      meta: ''
+      - name: consul
+        ver: 1.13.1
+        meta: ''
+      - name: vault
+        ver: 1.11.3
+        meta: ''
   roles:
-  - role: '{{ playbook_dir }}'
+    - role: '{{ playbook_dir }}'
