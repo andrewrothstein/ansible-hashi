@@ -1,10 +1,11 @@
 ---
 # ensure the role can be included as a meta dependency without ill consequence
-- hosts: all
+- name: Testing andrewrothstein.hashi default no apps
+  hosts: all
   roles:
     - role: '{{ playbook_dir }}'
-# simples example of usage
-- hosts: all
+- name: Testing andrewrothstein.hashi with simple apps/versions
+  hosts: all
   vars:
     hashi_apps:
       - name: consul-template
@@ -15,8 +16,8 @@
         ver: 1.15.4
   roles:
     - role: '{{ playbook_dir }}'
-# examples with meta
-- hosts: all
+- name: Testing andrewrothstein.hashi with apps with meta
+  hosts: all
   vars:
     hashi_apps:
       - name: consul
@@ -27,7 +28,8 @@
         meta: ent
   roles:
     - role: '{{ playbook_dir }}'
-- hosts: all
+- name: Testing andrewrothstein.hashi with apps with empty meta
+  hosts: all
   vars:
     hashi_apps:
       - name: consul
