@@ -1,7 +1,7 @@
 ---
-- name: installing {{ hashi_app.name }} package
+- name: Installing {{ hashi_app.name }} package
   become: '{{ hashi_elevate }}'
   become_user: root
-  package:
+  ansible.builtin.package:
     name: '{{ hashi_app.name }}'
     state: present

@@ -1,47 +1,48 @@
 ---
-- name: resolving vars for {{ hashi_app.name }}:{{ hashi_app.ver }}{% if 'meta' in hashi_app %}+{{ hashi_app.meta }}{% endif %}
-  include_vars:
+- name: Resolving vars for {{ hashi_app.name }}:{{ hashi_app.ver }}{% if 'meta' in hashi_app %}+{{ hashi_app.meta }}{% endif %}
+  ansible.builtin.include_vars:
     file: app-install-zip-vars.yml
-- name: looking for install directory {{ hashi_app_install_dir }}
-  stat:
-    path: '{{ hashi_app_install_dir }}'
+- name: Looking for previous installation of {{ hashi_app_install_exe }}
+  ansible.builtin.stat:
+    path: '{{ hashi_app_install_exe }}'
   register: hashi_app_install_binary
-- when: not hashi_app_install_binary.stat.exists
+- name: Downloading and installing
+  when: not hashi_app_install_binary.stat.exists
   block:
-    - name: creating {{ hashi_app_install_dir }}
+    - name: Mkdir {{ hashi_app_install_dir }}
       become: '{{ hashi_elevate }}'
       become_user: root
-      file:
+      ansible.builtin.file:
         name: '{{ hashi_app_install_dir }}'
         state: directory
-        mode: 0755
-    - name: downloading {{ hashi_app_install_url }} to {{ hashi_app_tmp_zip }}
+        mode: '755'
+    - name: Downloading {{ hashi_app_install_url }} to {{ hashi_app_tmp_zip }}
       become: '{{ hashi_elevate }}'
       become_user: root
-      get_url:
+      ansible.builtin.get_url:
         url: '{{ hashi_app_install_url }}'
         dest: '{{ hashi_app_tmp_zip }}'
         checksum: 'sha256:{{ hashi_app_install_checksums_url }}'
-    - name: unzipping {{ hashi_app_tmp_zip }} to {{ hashi_app_install_dir }}
+    - name: Unzipping {{ hashi_app_tmp_zip }} to {{ hashi_app_install_dir }}
       become: '{{ hashi_elevate }}'
       become_user: root
-      unarchive:
+      ansible.builtin.unarchive:
         remote_src: true
         src: '{{ hashi_app_tmp_zip }}'
         dest: '{{ hashi_app_install_dir }}'
         creates: '{{ hashi_app_install_exe }}'
   always:
-    - name: cleaning up {{ hashi_app_tmp_zip }}
+    - name: Cleaning up {{ hashi_app_tmp_zip }}
       become: '{{ hashi_elevate }}'
       become_user: root
-      file:
+      ansible.builtin.file:
         path: '{{ hashi_app_tmp_zip }}'
         state: absent
-- name: linking executables for {{ hashi_app.name }}:{{ hashi_app_eff_ver }}
+- name: Linking executables for {{ hashi_app.name }}:{{ hashi_app_eff_ver }}
   become: '{{ hashi_elevate }}'
   become_user: root
   with_items: '{{ hashi_app_install_links }}'
-  file:
+  ansible.builtin.file:
     state: link
     src: '{{ hashi_app_install_exe }}'
     dest: '{{ item }}'
