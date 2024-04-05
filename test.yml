@@ -9,11 +9,11 @@
   vars:
     hashi_apps:
       - name: consul-template
-        ver: 0.36.0
+        ver: 0.37.4
       - name: consul
-        ver: 1.17.1
+        ver: 1.18.1
       - name: vault
-        ver: 1.15.4
+        ver: 1.16.1
   roles:
     - role: '{{ playbook_dir }}'
 - name: Testing andrewrothstein.hashi with apps with meta
@@ -21,10 +21,10 @@
   vars:
     hashi_apps:
       - name: consul
-        ver: 1.17.1
+        ver: 1.18.1
         meta: ent
       - name: vault
-        ver: 1.15.4
+        ver: 1.16.1
         meta: ent
   roles:
     - role: '{{ playbook_dir }}'
@@ -33,10 +33,10 @@
   vars:
     hashi_apps:
       - name: consul
-        ver: 1.17.1
+        ver: 1.18.1
         meta: ''
       - name: vault
-        ver: 1.15.4
+        ver: 1.16.1
         meta: ''
   roles:
     - role: '{{ playbook_dir }}'
