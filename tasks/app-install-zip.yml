@@ -24,6 +24,9 @@
         dest: '{{ hashi_app_tmp_zip }}'
         mode: '644'
         checksum: 'sha256:{{ hashi_app_install_checksums_url }}'
+    - name: Installing andrewrothstein.unarchivedeps
+      ansible.builtin.include_role:
+        name: andrewrothstein.unarchivedeps
     - name: Unzipping {{ hashi_app_tmp_zip }} to {{ hashi_app_install_dir }}
       become: '{{ hashi_elevate }}'
       become_user: root
